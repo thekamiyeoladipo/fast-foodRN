@@ -1,12 +1,14 @@
 import "./global.css"
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
  
 export default function Index() {
   return (
-    <View className="flex-1 items-center justify-center bg-dark-100">
-      <Text className="font-quicksand-bold text-5xl font-bold text-blue-500">
-        Fast Food!
-      </Text>
-    </View>
+    <SafeAreaView>
+      <FlatList data={} 
+      renderItem={({ item }) => ()} 
+      />
+
+    </SafeAreaView>
   );
 }
