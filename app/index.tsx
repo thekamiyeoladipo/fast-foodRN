@@ -3,16 +3,18 @@ import "./global.css"
 import { FlatList, Image, Pressable, Text, TouchableOpacity, View} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Fragment } from "react";
+import cn from 'clsx';
 
 export default function Index() {
   return (
     <SafeAreaView>
       <FlatList data={offers} 
       renderItem={({ item, index }) => {
+        const isEven = index % 2 === 0;
         return (
           <View>
             <Pressable
-              className="offer-card"
+               className={cn("offer-card", isEven ? 'flex-row-reverse' : 'flex-row')}
               style={{ backgroundColor: item.color }}
             >
               {({ pressed }) => (
@@ -23,6 +25,12 @@ export default function Index() {
                       className={"size-full"}
                       resizeMode={"contain"}
                     />
+                  </View>
+
+                  <View className={"offer-card__info"}>
+                    <Text>
+                      {item.title}
+                    </Text>
                   </View>
 
                 
