@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Slot } from "expo-router";
 
 const _layout = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Auth layout</Text>
-    </View>
-  )
-}
+      <Slot />
+    </SafeAreaView>
+  );
+};
 
-export default _layout
+export default _layout;
