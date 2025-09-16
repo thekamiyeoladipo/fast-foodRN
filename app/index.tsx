@@ -5,6 +5,7 @@ import {
   Image,
   Pressable,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -12,10 +13,12 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Fragment } from "react";
 import cn from "clsx";
+import CartButton from "@/components/CartButton";
 
 export default function Index() {
   return (
     <SafeAreaView className="flex-1 bg-white">
+      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <FlatList
         data={offers}
         renderItem={({ item, index }) => {
@@ -49,14 +52,13 @@ export default function Index() {
                       <Text className="h1-bold text-white leading-tight">
                         {item.title}
                       </Text>
+                      <Image
+                        source={images.arrowRight}
+                        className="size-10"
+                        resizeMode="contain"
+                        tintColor="#ffffff"
+                      />
                     </View>
-
-                    <Image
-                      source={images.arrowRight}
-                      className="size-10"
-                      resizeMode="contain"
-                      tintColor="#ffffff"
-                    />
                   </Fragment>
                 )}
               </Pressable>
@@ -77,7 +79,7 @@ export default function Index() {
                 />
               </TouchableOpacity>
             </View>
-            <Text>Cart</Text>
+            <CartButton />
           </View>
         )}
       />
