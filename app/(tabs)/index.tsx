@@ -1,5 +1,5 @@
 import { images, offers } from "@/constants";
-import "./global.css";
+// import "./global.css";
 import {
   FlatList,
   Image,

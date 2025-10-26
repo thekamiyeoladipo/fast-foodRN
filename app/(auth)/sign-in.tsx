@@ -5,7 +5,7 @@ import { router } from 'expo-router'
 const SignIn = () => {
   return (
     <View>
-      <Text>SignIn</Text>
+      <Text className='text-red-500 text-5xl flex justify-center items-center'>SignIn</Text>
       <Button title='Sign In' onPress={() => router.push("/sign-up")} />
     </View>
   )
